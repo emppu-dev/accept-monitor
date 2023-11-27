@@ -5,6 +5,7 @@ If you have any issues with this please open a Github issue here instead of cont
 
 ## 🛠️ Usage
 Assets are taken in a assetId-assetType format
+Asset types can be found here: https://roblox.fandom.com/wiki/Asset
 ```
 main.py 12345678901-13 12345678902-13
 ```
