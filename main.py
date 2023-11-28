@@ -4,8 +4,18 @@ import datetime
 import random
 import re
 import sys, os
+import json
 
 os.system("")
+
+with open('config.json') as f:
+    config = json.load(f)
+    webhook = config['discord_webhook']
+
+if webhook == "":
+    useWebhook = False
+else:
+    useWebhook = True
 
 def log(text):
     timestamp = datetime.datetime.utcfromtimestamp(time.time()).strftime("%H:%M:%S")
@@ -47,6 +57,11 @@ with requests.Session() as session:
                     if check(session,assetId):
                         log(f"{assetId} is \u001b[32maccepted\u001b[0m")
                         assets[assetId] = True
+                        if useWebhook:
+                            embed_data = {"title": "Asset just got accepted","fields": [{"name": "ID","value": f"```{assetId}```"}],"color": 65280,"footer": {"text": "github.com/emppu-dev/accept-monitor"}}
+                            payload = {"embeds": [embed_data]}
+                            response = requests.post(webhook, data=json.dumps(payload), headers={"Content-Type": "application/json"})
+
                 except:
                     log("Something went wrong")
                 time.sleep(5)
