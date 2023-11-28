@@ -16,6 +16,10 @@ You can also choose to have this connected to your Discord webhook by setting it
 }
 ```
 
+## 📷 Preview
+![image](https://github.com/emppu-dev/accept-monitor/assets/83163481/afa7cd9e-d438-47d2-8241-89a115e7cd7b)
+
+
 ## ⚠️ Disclaimer
 This tool is provided for educational purposes only. Users are responsible for ensuring their actions comply with all laws and regulations. The developer is not liable for any misuse or unlawful activities conducted using this tool.
 
